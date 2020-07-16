@@ -166,8 +166,8 @@ return [
     |
     */
 
-    'right_sidebar' => false,
-    'right_sidebar_icon' => 'fas fa-cogs',
+    'right_sidebar' => true,
+    'right_sidebar_icon' => 'fas fa-bell',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
     'right_sidebar_push' => true,
@@ -188,7 +188,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/',
 
     'logout_url' => 'logout',
 
@@ -214,7 +214,7 @@ return [
     |
     */
 
-    'enabled_laravel_mix' => false,
+    'enabled_laravel_mix' => true,
     'laravel_mix_css_path' => 'css/app.css',
     'laravel_mix_js_path' => 'js/app.js',
 
@@ -231,88 +231,110 @@ return [
     */
 
     'menu' => [
+        ['header' => 'configurações da conta'],
         [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true,
+            'text' => 'Editar perfil',
+            'url' => '#',
+            'icon' => 'fas fa-user-alt mr-2'
         ],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text' => 'Gerenciar usuários',
+            'url' => '#',
+            'icon' => 'fas fa-users mr-2'
+        ],
+        ['header' => 'Gestão do sistema'],
+        [
+            'text' => 'Laboratórios',
+            'url' => '#',
+            'icon' => 'fas fa-flask mr-2'
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Problemas',
+            'url' => '#',
+            'icon' => 'fas fa-bug mr-2'
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+            'text' => 'Relatórios',
+            'url' => '#',
+            'icon' => 'fas fa-file-signature mr-2'
+        ]
+        // [
+        //     'text' => 'blog',
+        //     'url'  => 'admin/blog',
+        //     'can'  => 'manage-blog',
+        // ],
+        // [
+        //     'text'        => 'pages',
+        //     'url'         => 'admin/pages',
+        //     'icon'        => 'far fa-fw fa-file',
+        //     'label'       => 4,
+        //     'label_color' => 'success',
+        // ],
+        // ['header' => 'account_settings'],
+        // [
+        //     'text' => 'profile',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-user',
+        // ],
+        // [
+        //     'text' => 'change_password',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-lock',
+        // ],
+        // [
+        //     'text'    => 'multilevel',
+        //     'icon'    => 'fas fa-fw fa-share',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'level_one',
+        //             'url'  => '#',
+        //         ],
+        //         [
+        //             'text'    => 'level_one',
+        //             'url'     => '#',
+        //             'submenu' => [
+        //                 [
+        //                     'text' => 'level_two',
+        //                     'url'  => '#',
+        //                 ],
+        //                 [
+        //                     'text'    => 'level_two',
+        //                     'url'     => '#',
+        //                     'submenu' => [
+        //                         [
+        //                             'text' => 'level_three',
+        //                             'url'  => '#',
+        //                         ],
+        //                         [
+        //                             'text' => 'level_three',
+        //                             'url'  => '#',
+        //                         ],
+        //                     ],
+        //                 ],
+        //             ],
+        //         ],
+        //         [
+        //             'text' => 'level_one',
+        //             'url'  => '#',
+        //         ],
+        //     ],
+        // ],
+        // ['header' => 'labels'],
+        // [
+        //     'text'       => 'important',
+        //     'icon_color' => 'red',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'warning',
+        //     'icon_color' => 'yellow',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'information',
+        //     'icon_color' => 'cyan',
+        //     'url'        => '#',
+        // ],
     ],
 
     /*

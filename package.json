@@ -18,5 +18,11 @@
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0",
         "vue-template-compiler": "^2.6.11"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.14.0",
+        "icheck-bootstrap": "^3.0.1",
+        "jquery": "^3.5.1",
+        "overlayscrollbars": "^1.12.0"
     }
 }
