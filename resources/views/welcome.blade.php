@@ -6,15 +6,15 @@
 <h1>Dashboard</h1>
 @stop
 
-@section('content')
-<p>Welcome to this beautiful admin panel.</p>
-@stop
+    @section('content')
+    <p>Welcome to this beautiful admin panel.</p>
+    @stop
 
-@section('css')
-<link rel="stylesheet" href="/css/admin_custom.css">
-@stop
+        @section('css')
+        <link rel="stylesheet" href="/css/admin_custom.css">
+        @endsection
 
-<!-- @section('js')
+            {{-- <!-- @section('js')
 <script>
     Swal.fire(
         'welcome!',
@@ -22,4 +22,4 @@
         'success'
     )
 </script>
-@stop -->
+@stop--> --}}
