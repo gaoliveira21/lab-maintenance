@@ -231,17 +231,6 @@ return [
     */
 
     'menu' => [
-        ['header' => 'configurações da conta'],
-        [
-            'text' => 'Editar perfil',
-            'url' => '#',
-            'icon' => 'fas fa-user-alt mr-2'
-        ],
-        [
-            'text' => 'Gerenciar usuários',
-            'url' => '#',
-            'icon' => 'fas fa-users mr-2'
-        ],
         ['header' => 'Gestão do sistema'],
         [
             'text' => 'Laboratórios',
@@ -257,6 +246,22 @@ return [
             'text' => 'Relatórios',
             'url' => '#',
             'icon' => 'fas fa-file-signature mr-2'
+        ],
+        ['header' => 'Configurações da conta'],
+        [
+            'text' => 'Editar perfil',
+            'url' => '#',
+            'icon' => 'fas fa-user-alt mr-2'
+        ],
+        [
+            'text' => 'Gerenciar usuários',
+            'url' => '#',
+            'icon' => 'fas fa-users mr-2'
+        ],
+        [
+            'text' => 'Sair',
+            'url' => '#',
+            'icon' => 'fas fa-sign-out-alt mr-2'
         ]
         // [
         //     'text' => 'blog',

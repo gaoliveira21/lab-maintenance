@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mysqldb:
+    image: mysql:5.7
+    container_name: mysqldb_lab_maintenance
+    restart: unless-stopped
+    environment:
+      - "MYSQL_ROOT_PASSWORD=root"
+    volumes:
+      - ./data/mysqldb:/var/lib/mysql
+    ports:
+      - "3306:3306"
