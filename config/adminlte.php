@@ -46,7 +46,7 @@ return [
     */
 
     'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img' => 'img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -65,7 +65,7 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
+    'usermenu_header' => true,
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => false,
     'usermenu_desc' => false,
@@ -188,7 +188,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => '/',
+    'dashboard_url' => '/dashboard',
 
     'logout_url' => 'logout',
 
@@ -260,8 +260,8 @@ return [
         ],
         [
             'text' => 'Sair',
-            'url' => '#',
-            'icon' => 'fas fa-sign-out-alt mr-2'
+            'route' => 'logout',
+            'icon' => 'fas fa-sign-out-alt mr-2',
         ]
         // [
         //     'text' => 'blog',

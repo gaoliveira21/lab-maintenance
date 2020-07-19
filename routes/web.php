@@ -11,10 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes([
+    'register' => false,
+    'confirm' => false,
+    'reset' => false
+]);
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/logout', 'Auth\\LoginController@logout')->name('logout');
