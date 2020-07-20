@@ -1,0 +1,5 @@
+Swal.fire(
+    'welcome!',
+    '',
+    'success'
+)
