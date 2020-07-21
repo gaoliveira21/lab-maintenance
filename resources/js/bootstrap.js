@@ -12,6 +12,8 @@ try {
 
     window.Swal = require('sweetalert2');
 
+    require('datatables.net-bs4');
+
     require('overlayscrollbars');
     require('../../vendor/almasaeed2010/adminlte/dist/js/adminlte');
 

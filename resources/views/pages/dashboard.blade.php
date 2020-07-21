@@ -13,8 +13,3 @@
 @section('content')
 <p class="red">Welcome to this beautiful admin panel.</p>
 @stop
-
-
-@section('js')
-<script src="{{ url(mix('js/scripts.js')) }}"></script>
-@stop

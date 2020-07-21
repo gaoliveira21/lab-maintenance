@@ -19,3 +19,5 @@ Auth::routes([
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('/logout', 'Auth\\LoginController@logout')->name('logout');
+
+Route::resource('labs', 'LaboratoryController')->except(['show']);
