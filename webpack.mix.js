@@ -13,7 +13,10 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
+    .styles([
+        'resources/views/assets/css/datatables.css'
+    ], 'public/css/datatables.css')
     .scripts([
-        'resources/views/assets/js/datatables.js'
-    ], 'public/js/datatables.js')
-    .version();
+        'resources/views/assets/js/datatables/translation.js',
+        'resources/views/assets/js/datatables/labs.js'
+    ], 'public/js/datatables.js');

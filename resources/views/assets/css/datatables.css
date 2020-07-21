@@ -1,0 +1,15 @@
+.pagination .page-item .page-link {
+    color: #333;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #d81b60; border-color: #d81b60; color: #fff;
+}
+
+div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.active .page-link:focus {
+    background-color: #d81b60;
+}
+
+.pagination .page-item.active .page-link:hover {
+    background-color: #d81b60;
+}
