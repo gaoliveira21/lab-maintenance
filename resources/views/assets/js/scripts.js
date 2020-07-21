@@ -1,5 +1,0 @@
-Swal.fire(
-    'welcome!',
-    '',
-    'success'
-)

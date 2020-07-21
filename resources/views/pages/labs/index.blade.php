@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<table id="example" class="display table table-striped table-hover" style="width:100%">
+<table id="datatable" class="display table table-striped table-hover" style="width:100%">
     <thead>
         <tr>
             <th>Name</th>
@@ -50,9 +50,5 @@
 @stop
 
 @section('js')
-    <script>
-        $(document).ready(function() {
-            $('#example').DataTable();
-        });
-    </script>
+    <script src="js/datatables.js"></script>
 @endsection
