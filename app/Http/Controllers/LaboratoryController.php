@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Laboratory;
 
 class LaboratoryController extends Controller
 {
@@ -17,7 +18,8 @@ class LaboratoryController extends Controller
      */
     public function index()
     {
-        return view('pages.labs.index');
+        $data['laboratories'] = Laboratory::where('active', 1)->get();
+        return view('pages.labs.index', $data);
     }
 
     /**
