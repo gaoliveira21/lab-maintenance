@@ -44,8 +44,15 @@ class LaboratoryController extends Controller
             'name' => 'required',
         ]);
 
+        $name = $request->name;
+        $laboratory = Laboratory::where('name', $name)->get();
+
+        if(!empty($laboratory)) {
+            return redirect('labs/create')->withErrors('Laboratório ja cadastrado.');
+        }
+
         Laboratory::create([
-            'name' => $request->name,
+            'name' => $name,
             'active' => 1
         ]);
 
