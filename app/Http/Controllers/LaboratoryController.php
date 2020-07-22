@@ -29,7 +29,7 @@ class LaboratoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.labs.create');
     }
 
     /**

@@ -3,8 +3,8 @@
 @section('title', 'Laboratórios')
 
 @section('css')
-    <link rel="stylesheet" href="css/datatables.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{{ url('css/datatables.css') }}">
+    <link rel="stylesheet" href="{{ url('css/styles.css') }}">
 @endsection
 
 @section('content_header')
@@ -13,7 +13,7 @@
         'route' => 'labs.create',
         'backBtn' => false
     ])@endcomponent
-@stop
+@endsection
 
 @section('content')
 <div class="card">
@@ -22,7 +22,7 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Sala</th>
+                    <th>Nome</th>
                     <th>Criado em</th>
                     <th>Atualizado em</th>
                     <th>Ações</th>
@@ -49,7 +49,7 @@
             <tfoot>
                 <tr>
                     <th>ID</th>
-                    <th>Sala</th>
+                    <th>Nome</th>
                     <th>Criado em</th>
                     <th>Atualizado em</th>
                     <th>Ações</th>
@@ -58,7 +58,7 @@
         </table>
     </div>
 </div>
-@stop
+@endsection
 
 @section('js')
     <script src="js/datatables/index.js"></script>
