@@ -8,17 +8,11 @@
 @endsection
 
 @section('content_header')
-<div class="row">
-    <div class="col-6">
-        <h1>Listagem de laboratórios</h1>
-    </div>
-    <div class="col-6 text-right">
-        <button class="btn btn-purple">
-            <i class="fas fa-plus"></i>
-            Cadastrar
-        </button>
-    </div>
-</div>
+    @component('components.header', [
+        'title' => 'Listagem de laboratórios',
+        'route' => 'labs.create',
+        'backBtn' => false
+    ])@endcomponent
 @stop
 
 @section('content')
