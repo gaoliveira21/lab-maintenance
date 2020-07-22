@@ -2,10 +2,6 @@
 
 @section('title', 'Dashboard')
 
-@section('css')
-<link rel="stylesheet" href="{{ url(mix('css/styles.css')) }}">
-@endsection
-
 @section('content_header')
 <h1>Dashboard</h1>
 @stop

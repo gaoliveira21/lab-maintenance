@@ -13,7 +13,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <table id="datatable" class="display table table-striped table-hover">
+        <table id="labs-table" class="display table table-striped table-hover">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -154,5 +154,6 @@
 @stop
 
 @section('js')
-    <script src="js/datatables.js"></script>
+    <script src="js/datatables/index.js"></script>
+    <script src="js/datatables/labs.js"></script>
 @endsection

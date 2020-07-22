@@ -17,6 +17,8 @@ mix.js('resources/js/app.js', 'public/js')
         'resources/views/assets/css/datatables.css'
     ], 'public/css/datatables.css')
     .scripts([
-        'resources/views/assets/js/datatables/translation.js',
+        'resources/views/assets/js/datatables/index.js',
+    ], 'public/js/datatables/index.js')
+    .scripts([
         'resources/views/assets/js/datatables/labs.js'
-    ], 'public/js/datatables.js');
+    ], 'public/js/datatables/labs.js');
