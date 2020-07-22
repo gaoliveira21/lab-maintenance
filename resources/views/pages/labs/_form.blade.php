@@ -1,3 +1,7 @@
+@component('components.alert', [
+    'error' => isset($error) ? $error : null,
+])@endcomponent
+
 <div class="card">
     <div class="card-body">
         <form action="{{ route('labs.store') }}" method="POST">

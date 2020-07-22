@@ -40,7 +40,16 @@ class LaboratoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+        Laboratory::create([
+            'name' => $request->name,
+            'active' => 1
+        ]);
+
+        return redirect()->route('labs.index');
     }
 
     /**
