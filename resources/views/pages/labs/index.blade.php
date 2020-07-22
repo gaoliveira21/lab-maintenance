@@ -4,10 +4,21 @@
 
 @section('css')
     <link rel="stylesheet" href="css/datatables.css">
+    <link rel="stylesheet" href="css/styles.css">
 @endsection
 
 @section('content_header')
-<h1>Listagem de laboratórios</h1>
+<div class="row">
+    <div class="col-6">
+        <h1>Listagem de laboratórios</h1>
+    </div>
+    <div class="col-6 text-right">
+        <button class="btn btn-purple">
+            <i class="fas fa-plus"></i>
+            Cadastrar
+        </button>
+    </div>
+</div>
 @stop
 
 @section('content')
@@ -20,17 +31,26 @@
                     <th>Sala</th>
                     <th>Criado em</th>
                     <th>Atualizado em</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    @foreach ($laboratories as $laboratory)
+                @foreach ($laboratories as $laboratory)
+                    <tr>
                         <td>{{ $laboratory->id }}</td>
                         <td>{{ $laboratory->name }}</td>
                         <td>{{ date('d-m-Y', strtotime($laboratory->created_at)) }}</td>
                         <td>{{ date('d-m-Y', strtotime($laboratory->updated_at)) }}</td>
-                    @endforeach
-                </tr>
+                        <td>
+                            <a class="btn btn-xs btn-primary mr-2" href="#">
+                                <i class="fas fa-pen"></i>
+                            </a>
+                            <a class="btn btn-xs btn-danger" href="#">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
             <tfoot>
                 <tr>
@@ -38,6 +58,7 @@
                     <th>Sala</th>
                     <th>Criado em</th>
                     <th>Atualizado em</th>
+                    <th>Ações</th>
                 </tr>
             </tfoot>
         </table>

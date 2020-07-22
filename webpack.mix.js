@@ -16,6 +16,9 @@ mix.js('resources/js/app.js', 'public/js')
     .styles([
         'resources/views/assets/css/datatables.css'
     ], 'public/css/datatables.css')
+    .styles([
+        'resources/views/assets/css/styles.css'
+    ], 'public/css/styles.css')
     .scripts([
         'resources/views/assets/js/datatables/index.js',
     ], 'public/js/datatables/index.js')

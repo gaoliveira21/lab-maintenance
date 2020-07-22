@@ -1,0 +1,15 @@
+.btn-purple {
+    color: #fff;
+    background-color: #d81b60;
+    border-color: #d81b60;
+    box-shadow: none;
+    transition: opacity .2s ease-in;
+}
+
+.btn-purple:hover {
+    color: #fff;
+    opacity: 0.9;
+    background-color: #d81b60;
+    border-color: #d81b60;
+    box-shadow: none;
+}
