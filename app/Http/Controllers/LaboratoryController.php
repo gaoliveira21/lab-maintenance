@@ -45,9 +45,12 @@ class LaboratoryController extends Controller
         ]);
 
         $name = $request->name;
-        $laboratory = Laboratory::where('name', $name)->get();
+        $laboratory = Laboratory::where([
+            'name'=> $name,
+            'active' => 1
+        ])->first();
 
-        if(!empty($laboratory)) {
+        if (!empty($laboratory)) {
             return redirect('labs/create')->withErrors('Laboratório ja cadastrado.');
         }
 
@@ -60,17 +63,6 @@ class LaboratoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -78,7 +70,13 @@ class LaboratoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['laboratory'] = Laboratory::find($id);
+
+        if (empty($data['laboratory'])) {
+            return redirect()->route('labs.index');
+        }
+
+        return view('pages.labs.edit', $data);
     }
 
     /**
@@ -88,9 +86,28 @@ class LaboratoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, int $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+        $name = $request->name;
+        $laboratory = Laboratory::where([
+            'name'=> $name,
+            'active' => 1
+        ])->first();
+
+        if (!empty($laboratory)) {
+            return redirect('labs/' . $id . '/edit')->withErrors('Laboratório ja cadastrado.');
+        }
+
+        $laboratory = Laboratory::find($id);
+        $laboratory->name = $name;
+
+        $laboratory->save();
+
+        return redirect()->route('labs.index');
     }
 
     /**

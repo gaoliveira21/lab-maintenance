@@ -36,7 +36,7 @@
                         <td>{{ date('d-m-Y', strtotime($laboratory->created_at)) }}</td>
                         <td>{{ date('d-m-Y', strtotime($laboratory->updated_at)) }}</td>
                         <td>
-                            <a class="btn btn-xs btn-primary mr-2" href="#">
+                            <a class="btn btn-xs btn-primary mr-2" href="{{ route('labs.edit', $laboratory->id) }}">
                                 <i class="fas fa-pen"></i>
                             </a>
                             <a class="btn btn-xs btn-danger" href="#">
