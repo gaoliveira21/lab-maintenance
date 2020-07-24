@@ -118,6 +118,7 @@ class LaboratoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // throw new Exception("Error Processing Request", 1);
+        return response()->json([], 400);
     }
 }

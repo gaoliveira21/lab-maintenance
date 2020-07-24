@@ -24,8 +24,15 @@ function ptBR() {
     };
 }
 
-function initDataTables(id, lang = ptBR) {
-    $(`#${id}`).DataTable({
-        language: lang()
+function initDataTables(id, options = {}, lang = ptBR) {
+    return $(`#${id}`).DataTable({
+        language: lang(),
+        ...options
     });
+}
+
+function removeRow(table, trigger) {
+    table.row(trigger.parents('tr'))
+        .remove()
+        .draw();
 }

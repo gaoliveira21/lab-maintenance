@@ -39,9 +39,12 @@
                             <a class="btn btn-xs btn-primary mr-2" href="{{ route('labs.edit', $laboratory->id) }}">
                                 <i class="fas fa-pen"></i>
                             </a>
-                            <a class="btn btn-xs btn-danger" href="#">
+                        <button
+                            data-action="{{ route('labs.destroy', $laboratory->id) }}"
+                            class="btn btn-xs btn-danger remove" type="button"
+                        >
                                 <i class="fas fa-trash"></i>
-                            </a>
+                            </button>
                         </td>
                     </tr>
                 @endforeach
@@ -62,5 +65,6 @@
 
 @section('js')
     <script src="js/datatables/index.js"></script>
+    <script src="js/sweetalert/index.js"></script>
     <script src="js/datatables/labs.js"></script>
 @endsection
