@@ -118,7 +118,16 @@ class LaboratoryController extends Controller
      */
     public function destroy($id)
     {
-        // throw new Exception("Error Processing Request", 1);
-        return response()->json([], 400);
+
+        $laboratory = Laboratory::find($id);
+
+        if (empty($laboratory)) {
+            return response()->json(['error' => 'Laboratory not found'], 404);
+        }
+
+        $laboratory->active = 0;
+        $laboratory->save();
+
+        return response()->json([], 200);
     }
 }
