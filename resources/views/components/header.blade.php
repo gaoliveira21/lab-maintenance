@@ -6,12 +6,12 @@
         @if (!$backBtn)
             <a href="{{ route($route) }}" class="btn btn-purple">
                 <i class="fas fa-plus"></i>
-                CADASTRAR
+                <b>CADASTRAR</b>
             </a>
         @else
             <a href="{{ route($route) }}" class="btn btn-secondary">
                 <i class="fas fa-arrow-left"></i>
-                VOLTAR
+                <b>VOLTAR</b>
             </a>
         @endif
     </div>

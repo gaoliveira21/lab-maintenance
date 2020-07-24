@@ -118,7 +118,6 @@ class LaboratoryController extends Controller
      */
     public function destroy($id)
     {
-
         $laboratory = Laboratory::find($id);
 
         if (empty($laboratory)) {
