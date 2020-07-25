@@ -49,6 +49,7 @@
                     required
                     class="@error('body') is-invalid @enderror form-control"
                     rows="4"
+                    maxlength="1024"
                 ></textarea>
             </div>
             <button type="submit" class="btn btn-purple">

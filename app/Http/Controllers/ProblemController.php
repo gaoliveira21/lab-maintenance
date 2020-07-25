@@ -45,7 +45,7 @@ class ProblemController extends Controller
     {
         $request->validate([
             'title' => 'required|max:255',
-            'body' => 'required|max:255',
+            'body' => 'required|max:1024',
             'laboratory_id' => 'required',
             'status' => 'required|between:0,1'
         ]);
