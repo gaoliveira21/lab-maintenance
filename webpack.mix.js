@@ -27,4 +27,7 @@ mix.js('resources/js/app.js', 'public/js')
     ], 'public/js/sweetalert/index.js')
     .scripts([
         'resources/views/assets/js/datatables/labs.js'
-    ], 'public/js/datatables/labs.js');
+    ], 'public/js/datatables/labs.js')
+    .scripts([
+        'resources/views/assets/js/datatables/problems.js'
+    ], 'public/js/datatables/problems.js');
