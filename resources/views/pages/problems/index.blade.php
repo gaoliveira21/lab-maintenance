@@ -38,8 +38,6 @@
                         <td>{{ $problem->title }}</td>
                         <td>{{ $problem->author->name }}</td>
                         <td>{{ $problem->locale->name }}</td>
-                        <td>{{ date('d-m-Y', strtotime($problem->created_at)) }}</td>
-                        <td>{{ date('d-m-Y', strtotime($problem->updated_at)) }}</td>
                         <td>
                             @if ($problem->status)
                                 <span class="badge badge-success">Resolvido</span>
@@ -47,6 +45,8 @@
                                 <span class="badge badge-warning">Pendente</span>
                             @endif
                         </td>
+                        <td>{{ date('d-m-Y', strtotime($problem->created_at)) }}</td>
+                        <td>{{ date('d-m-Y', strtotime($problem->updated_at)) }}</td>
                         <td>
                             <a class="btn btn-xs btn-info mr-2" href="{{ route('problems.show', $problem->id) }}">
                                 <i class="far fa-eye"></i>
@@ -82,7 +82,7 @@
 @endsection
 
 @section('js')
-    <script src="js/datatables/index.js"></script>
-    <script src="js/sweetalert/index.js"></script>
-    <script src="js/datatables/problems.js"></script>
+    <script src="{{ url('js/datatables/index.js') }}"></script>
+    <script src="{{ url('js/sweetalert/index.js') }}"></script>
+    <script src="{{ url('js/datatables/problems.js') }}"></script>
 @endsection

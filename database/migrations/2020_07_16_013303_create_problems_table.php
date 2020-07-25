@@ -16,7 +16,7 @@ class CreateProblemsTable extends Migration
         Schema::create('problems', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('body');
+            $table->text('body');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('laboratory_id');
             $table->boolean('active');

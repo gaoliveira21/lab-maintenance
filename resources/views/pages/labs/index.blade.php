@@ -64,7 +64,7 @@
 @endsection
 
 @section('js')
-    <script src="js/datatables/index.js"></script>
-    <script src="js/sweetalert/index.js"></script>
-    <script src="js/datatables/labs.js"></script>
+    <script src="{{ url('js/datatables/index.js') }}"></script>
+    <script src="{{ url('js/sweetalert/index.js') }}"></script>
+    <script src="{{ url('js/datatables/labs.js') }}"></script>
 @endsection

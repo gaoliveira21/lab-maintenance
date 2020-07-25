@@ -51,7 +51,7 @@ class LaboratoryController extends Controller
         ])->first();
 
         if (!empty($laboratory)) {
-            return redirect('labs/create')->withErrors('Laboratório ja cadastrado.');
+            return redirect()->route('labs.create')->withErrors('Laboratório ja cadastrado.');
         }
 
         Laboratory::create([
