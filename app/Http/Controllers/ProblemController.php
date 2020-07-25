@@ -18,7 +18,8 @@ class ProblemController extends Controller
      */
     public function index()
     {
-        //
+        $data['problems'] = Problem::all();
+        return view('pages.problems.index', $data);
     }
 
     /**

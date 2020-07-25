@@ -39,10 +39,10 @@
                             <a class="btn btn-xs btn-primary mr-2" href="{{ route('labs.edit', $laboratory->id) }}">
                                 <i class="fas fa-pen"></i>
                             </a>
-                        <button
-                            data-action="{{ route('labs.destroy', $laboratory->id) }}"
-                            class="btn btn-xs btn-danger remove" type="button"
-                        >
+                            <button
+                                data-action="{{ route('labs.destroy', $laboratory->id) }}"
+                                class="btn btn-xs btn-danger remove" type="button"
+                            >
                                 <i class="fas fa-trash"></i>
                             </button>
                         </td>

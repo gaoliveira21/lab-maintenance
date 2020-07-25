@@ -234,12 +234,12 @@ return [
         ['header' => 'Gestão do sistema'],
         [
             'text' => 'Laboratórios',
-            'url' => 'labs',
+            'route' => 'labs.index',
             'icon' => 'fas fa-flask mr-2'
         ],
         [
             'text' => 'Problemas',
-            'url' => '#',
+            'route' => 'problems.index',
             'icon' => 'fas fa-bug mr-2'
         ],
         [
