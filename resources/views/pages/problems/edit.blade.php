@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Novo Problema')
+@section('title', 'Editar problema')
 
 @section('css')
     <link rel="stylesheet" href="{{ url('css/styles.css') }}">
@@ -8,7 +8,7 @@
 
 @section('content_header')
     @component('components.header', [
-        'title' => 'Cadastro de problema',
+        'title' => 'Edição de problema',
         'route' => 'problems.index',
         'backBtn' => true
     ])@endcomponent

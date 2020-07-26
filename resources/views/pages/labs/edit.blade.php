@@ -14,7 +14,6 @@
     ])@endcomponent
 @endsection
 
-
 @section('content')
     @include('pages.labs._form')
 @endsection

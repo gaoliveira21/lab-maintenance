@@ -89,7 +89,9 @@ class ProblemController extends Controller
      */
     public function edit(Problem $problem)
     {
-        //
+        $data['laboratories'] = Laboratory::all();
+        $data['problem'] = $problem;
+        return view('pages.problems.edit', $data);
     }
 
     /**
