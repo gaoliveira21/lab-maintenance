@@ -77,7 +77,8 @@ class ProblemController extends Controller
      */
     public function show(Problem $problem)
     {
-        //
+        $data['problem'] = $problem;
+        return view('pages.problems.show', $data);
     }
 
     /**
