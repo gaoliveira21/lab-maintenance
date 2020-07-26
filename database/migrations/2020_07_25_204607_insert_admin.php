@@ -17,7 +17,7 @@ class InsertAdmin extends Migration
         DB::table('users')->insert([
             'name' => env('ADMIN_NAME', 'Administrador'),
             'email' => env('ADMIN_EMAIL', ''),
-            'password' => env('ADMIN_PASSWORD', ''),
+            'password' => bcrypt(env('ADMIN_PASSWORD', '')),
             'role' => 100,
             'active' => 1
         ]);
