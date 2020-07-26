@@ -35,7 +35,7 @@
                 @foreach ($problems as $problem)
                     <tr>
                         <td>{{ $problem->id }}</td>
-                        <td>{{ $problem->title }}</td>
+                        <td>{{ Str::limit($problem->title, $limit = 20, $end = '...') }}</td>
                         <td>{{ $problem->author->name }}</td>
                         <td>{{ $problem->locale->name }}</td>
                         <td>
