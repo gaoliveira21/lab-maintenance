@@ -20,7 +20,7 @@ class ProblemController extends Controller
      */
     public function index()
     {
-        $data['problems'] = Problem::all();
+        $data['problems'] = Problem::where('active', 1)->get();
         return view('pages.problems.index', $data);
     }
 
@@ -136,8 +136,17 @@ class ProblemController extends Controller
      * @param  \App\Models\Problem  $problem
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Problem $problem)
+    public function destroy(int $id)
     {
-        //
+        $problem = Problem::find($id);
+
+        if (empty($problem)) {
+            return response()->json(['error' => 'Problem not found'], 404);
+        }
+
+        $problem->active = 0;
+        $problem->save();
+
+        return response()->json([], 200);
     }
 }
