@@ -5,10 +5,13 @@
 <div class="card">
     <div class="card-body">
         <form
-            action="{{ route('problems.store') }}"
+            action="{{ isset($problem) ? route('problems.update', $problem->id) : route('problems.store') }}"
             method="POST"
         >
             @csrf
+            @if(isset($problem))
+                @method('PUT')
+            @endif
             <div class="form-group">
                 <label for="title">Título</label>
                 <input
@@ -17,6 +20,7 @@
                     id="title"
                     required
                     class="@error('title') is-invalid @enderror form-control"
+                    value="{{ isset($problem) ? $problem->title : '' }}"
                 >
             </div>
             <div class="form-group row">
@@ -27,17 +31,27 @@
                         id="laboratory"
                         class="form-control"
                     >
-                        <option value="0" selected>Selecione o local do problema</option>
+                        <option value="0">Selecione o local do problema</option>
                         @foreach ($laboratories as $laboratory)
-                            <option value="{{ $laboratory->id }}">{{ $laboratory->name }}</option>
+                            @if (isset($problem) && $laboratory->id === $problem->id)
+                            <option value="{{ $laboratory->id }}" selected>{{ $laboratory->name }}</option>
+                            @else
+                                <option value="{{ $laboratory->id }}">{{ $laboratory->name }}</option>
+                            @endif
                         @endforeach
                     </select>
                 </div>
                 <div class="col-6">
                     <label for="status">Status</label>
                     <select name="status" id="status" class="form-control">
-                        <option value="0" selected>Pendente</option>
-                        <option value="1">Resolvido</option>
+                        <option
+                            value="0"
+                            {{ isset($problem) && $problem->status === 0 ? 'selected' : '' }}
+                        >Pendente</option>
+                        <option
+                            value="1"
+                            {{ isset($problem) && $problem->status === 1 ? 'selected' : '' }}
+                        >Resolvido</option>
                     </select>
                 </div>
             </div>
@@ -50,7 +64,7 @@
                     class="@error('body') is-invalid @enderror form-control"
                     rows="4"
                     maxlength="1024"
-                ></textarea>
+            >{{ isset($problem) ? $problem->body : ''}}</textarea>
             </div>
             <button type="submit" class="btn btn-purple">
                 ENVIAR

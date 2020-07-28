@@ -103,7 +103,31 @@ class ProblemController extends Controller
      */
     public function update(Request $request, Problem $problem)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:255',
+            'body' => 'required|max:1024',
+            'laboratory_id' => 'required',
+            'status' => 'required|between:0,1'
+        ]);
+
+        $laboratory_id = (int) $request->laboratory_id;
+
+        if($laboratory_id === 0) {
+            return redirect()->route('problems.create')->withErrors('O campo Local é obrigatório');
+        }
+
+        if(!Laboratory::find($laboratory_id)->exists()) {
+            return redirect()->route('problems.create')->withErrors('Local não encontrado');
+        }
+
+        $problem->title = $request->title;
+        $problem->body = $request->body;
+        $problem->laboratory_id = $request->laboratory_id;
+        $problem->status = $request->status;
+
+        $problem->save();
+
+        return redirect()->route('problems.index');
     }
 
     /**
