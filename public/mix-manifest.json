@@ -6,5 +6,6 @@
     "/js/datatables/index.js": "/js/datatables/index.js",
     "/js/sweetalert/index.js": "/js/sweetalert/index.js",
     "/js/datatables/labs.js": "/js/datatables/labs.js",
-    "/js/datatables/problems.js": "/js/datatables/problems.js"
+    "/js/datatables/problems.js": "/js/datatables/problems.js",
+    "/js/datatables/reports.js": "/js/datatables/reports.js"
 }

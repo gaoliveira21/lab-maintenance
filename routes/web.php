@@ -25,3 +25,5 @@ Route::get('/logout', 'Auth\\LoginController@logout')->name('logout');
 Route::resource('labs', 'LaboratoryController')->except(['show']);
 
 Route::resource('problems', 'ProblemController');
+
+Route::resource('reports', 'ReportController');

@@ -244,7 +244,7 @@ return [
         ],
         [
             'text' => 'Relatórios',
-            'url' => '#',
+            'route' => 'reports.index',
             'icon' => 'fas fa-file-signature mr-2'
         ],
         [
