@@ -25,10 +25,12 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.14.0",
+        "@ttskch/select2-bootstrap4-theme": "^1.4.0",
         "datatables.net-bs4": "^1.10.21",
         "icheck-bootstrap": "^3.0.1",
         "jquery": "^3.5.1",
         "overlayscrollbars": "^1.12.0",
+        "select2": "^4.0.13",
         "sweetalert2": "^9.17.0"
     }
 }

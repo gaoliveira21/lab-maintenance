@@ -12,6 +12,9 @@ try {
 
     window.Swal = require('sweetalert2');
 
+    require('select2');
+    require('select2/dist/css/select2.css');
+    require('@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.css');
     require('datatables.net-bs4');
 
     require('overlayscrollbars');
