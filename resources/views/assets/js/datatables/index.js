@@ -26,6 +26,7 @@ function ptBR() {
 
 function initDataTables(id, options = {}, lang = ptBR) {
     return $(`#${id}`).DataTable({
+        responsive: true,
         language: lang(),
         ...options
     });

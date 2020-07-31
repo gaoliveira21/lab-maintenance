@@ -17,7 +17,7 @@
 
 @section('content')
 <div class="card">
-    <div class="card-body">
+    <div class="card-body table-responsive">
         <table id="problems-table" class="display table table-striped table-hover">
             <thead>
                 <tr>
