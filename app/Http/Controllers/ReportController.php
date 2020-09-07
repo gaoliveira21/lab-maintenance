@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Report;
+use App\Models\Laboratory;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
@@ -25,7 +26,8 @@ class ReportController extends Controller
      */
     public function create()
     {
-        return view('pages.reports.create');
+        $data['laboratories'] = Laboratory::all();
+        return view('pages.reports.create', $data);
     }
 
     /**
@@ -36,7 +38,7 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

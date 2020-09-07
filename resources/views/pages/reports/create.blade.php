@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-    @include('pages.reports._form')
+    @include('pages.reports._form', ['laboratories' => $laboratories])
 @endsection
 
 @section('js')
