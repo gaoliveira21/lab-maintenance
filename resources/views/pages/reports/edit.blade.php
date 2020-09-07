@@ -8,7 +8,7 @@
 
 @section('content_header')
     @component('components.header', [
-        'title' => 'Cadastro de relatório',
+        'title' => 'Edição de relatório',
         'route' => 'reports.index',
         'backBtn' => true
     ])@endcomponent
@@ -20,5 +20,4 @@
 
 @section('js')
     <script src="{{ url('js/select2/reports.js') }}"></script>
-    {{-- $(".leaderMultiSelctdropdown").val(["a", "c"]); --}}
 @endsection

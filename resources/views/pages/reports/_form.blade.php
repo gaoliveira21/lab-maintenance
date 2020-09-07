@@ -5,10 +5,13 @@
 <div class="card">
     <div class="card-body">
         <form
-            action="{{ route('reports.store') }}"
+            action="{{ isset($report) ? route('reports.update', $report->id) : route('reports.store') }}"
             method="POST"
         >
             @csrf
+            @if(isset($report))
+                @method('PUT')
+            @endif
             <div class="form-group">
                 <label for="title">Título</label>
                 <input
@@ -17,12 +20,17 @@
                     id="title"
                     required
                     class="@error('title') is-invalid @enderror form-control"
-                    value="{{ isset($problem) ? $problem->title : '' }}"
+                    value="{{ isset($report) ? $report->title : '' }}"
                 >
             </div>
             <div class="form-group">
                 <label for="labs">Laboratórios</label>
-                <select class="select-mult form-control" name="labs[]" multiple="multiple">
+                <select
+                    class="select-mult form-control labs"
+                    data-selected="{{ isset($report) ? $report->labs()->get() : '[]' }}"
+                    name="labs[]"
+                    multiple="multiple"
+                >
                     @foreach ($laboratories as $laboratory)
                         <option value="{{ $laboratory->id }}">{{ $laboratory->name }}</option>
                     @endforeach
@@ -38,7 +46,7 @@
                     class="@error('text') is-invalid @enderror form-control"
                     rows="4"
                     maxlength="1024"
-            ></textarea>
+            >{{ isset($report) ? $report->text : '' }}</textarea>
             </div>
             <button type="submit" class="btn btn-purple">
                 ENVIAR

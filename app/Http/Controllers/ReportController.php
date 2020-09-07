@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Report;
 use App\Models\Laboratory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReportController extends Controller
 {
@@ -38,7 +39,26 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $request->validate([
+            'title' => 'required|max:255',
+            'text' => 'required|max:1024',
+        ]);
+
+        $labs = $request->labs;
+
+        if(empty($labs)){
+            return redirect()->route('reports.create')->withErrors('É obrigatório selecionar ao menos um laboratório');
+        }
+
+        $data['title'] = $request->title;
+        $data['text'] = $request->text;
+        $data['user_id'] = Auth::id();
+        $data['active'] = 1;
+
+        $report = Report::create($data);
+        $report->labs()->attach($labs);
+
+        return redirect()->route('reports.index');
     }
 
     /**
@@ -58,9 +78,11 @@ class ReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Report $report)
     {
-        //
+        $data['laboratories'] = Laboratory::all();
+        $data['report'] = $report;
+        return view('pages.reports.edit', $data);
     }
 
     /**
@@ -70,9 +92,26 @@ class ReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Report $report)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:255',
+            'text' => 'required|max:1024',
+        ]);
+
+        $labs = $request->labs;
+
+        if(empty($labs)){
+            return redirect()->route('reports.update')->withErrors('É obrigatório selecionar ao menos um laboratório');
+        }
+
+        $report->title = $request->title;
+        $report->text = $request->text;
+
+        $report->save();
+        $report->labs()->sync($labs);
+
+        return redirect()->route('reports.index');
     }
 
     /**

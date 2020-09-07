@@ -12,4 +12,9 @@ class Report extends Model
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
+
+    public function labs()
+    {
+        return $this->belongsToMany(Laboratory::class, 'reports_laboratories', 'report_id', 'laboratory_id');
+    }
 }
