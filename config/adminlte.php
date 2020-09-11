@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>Lab</b>Maintenance',
+    'logo' => '',
     'logo_img' => 'img/logo.svg',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo_img_class' => '',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Lab Maintenance',
+    'logo_img_alt' => 'My Lab',
 
     /*
     |--------------------------------------------------------------------------
@@ -126,9 +126,9 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-maroon elevation-4',
+    'classes_sidebar' => 'sidebar-dark-danger elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-maroon navbar-dark',
+    'classes_topnav' => 'navbar-danger navbar-dark',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -166,7 +166,7 @@ return [
     |
     */
 
-    'right_sidebar' => true,
+    'right_sidebar' => false,
     'right_sidebar_icon' => 'fas fa-bell',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,

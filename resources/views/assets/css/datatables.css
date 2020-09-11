@@ -3,13 +3,13 @@
 }
 
 .pagination .page-item.active .page-link {
-    background-color: #d81b60; border-color: #d81b60; color: #fff;
+    background-color: #dc3545; border-color: #dc3545; color: #fff;
 }
 
 div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.active .page-link:focus {
-    background-color: #d81b60;
+    background-color: #dc3545;
 }
 
 .pagination .page-item.active .page-link:hover {
-    background-color: #d81b60;
+    background-color: #dc3545;
 }

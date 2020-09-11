@@ -23,7 +23,7 @@
                     value="<?= isset($laboratory) ? $laboratory->name : '' ?>"
                 >
             </div>
-            <button type="submit" class="btn btn-purple">
+            <button type="submit" class="btn btn-danger">
                 ENVIAR
             </button>
         </form>

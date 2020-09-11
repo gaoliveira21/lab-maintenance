@@ -48,7 +48,7 @@
                     maxlength="1024"
             >{{ isset($report) ? $report->text : '' }}</textarea>
             </div>
-            <button type="submit" class="btn btn-purple">
+            <button type="submit" class="btn btn-danger">
                 ENVIAR
             </button>
         </form>

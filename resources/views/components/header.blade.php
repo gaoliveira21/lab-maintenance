@@ -4,7 +4,7 @@
     </div>
     <div class="col-6 text-right">
         @if (!$backBtn)
-            <a href="{{ route($route) }}" class="btn btn-purple">
+            <a href="{{ route($route) }}" class="btn btn-danger">
                 <i class="fas fa-plus"></i>
                 <b>CADASTRAR</b>
             </a>
