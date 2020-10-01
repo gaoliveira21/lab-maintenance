@@ -129,24 +129,4 @@ class ProblemController extends Controller
 
         return redirect()->route('problems.index');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Problem  $problem
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(int $id)
-    {
-        $problem = Problem::find($id);
-
-        if (empty($problem)) {
-            return response()->json(['error' => 'Problem not found'], 404);
-        }
-
-        $problem->active = 0;
-        $problem->save();
-
-        return response()->json([], 200);
-    }
 }
