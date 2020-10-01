@@ -67,9 +67,10 @@ class ReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Report $report)
     {
-        //
+        $data['report'] = $report;
+        return view('pages.reports.show', $data);
     }
 
     /**
