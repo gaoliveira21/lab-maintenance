@@ -54,12 +54,6 @@
                             <a class="btn btn-xs btn-primary mr-1" href="{{ route('problems.edit', $problem->id) }}">
                                 <i class="fas fa-pen"></i>
                             </a>
-                            <button
-                                data-action="{{ route('problems.destroy', $problem->id) }}"
-                                class="btn btn-xs btn-danger remove" type="button"
-                            >
-                                <i class="fas fa-trash"></i>
-                            </button>
                         </td>
                     </tr>
                 @endforeach
