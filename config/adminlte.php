@@ -249,7 +249,7 @@ return [
         ],
         [
             'text' => 'Gerenciar usuários',
-            'url' => '#',
+            'route' => 'users.index',
             'icon' => 'fas fa-users mr-2'
         ],
         ['header' => 'Configurações da conta'],

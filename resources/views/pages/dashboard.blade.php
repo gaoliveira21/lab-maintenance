@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Laboratórios')
+@section('title', 'Dashboard')
 
 @section('css')
     <link rel="stylesheet" href="{{ url('css/datatables.css') }}">

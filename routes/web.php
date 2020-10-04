@@ -27,3 +27,5 @@ Route::resource('labs', 'LaboratoryController')->except(['show']);
 Route::resource('problems', 'ProblemController')->except(['destroy']);
 
 Route::resource('reports', 'ReportController')->except(['destroy']);
+
+Route::resource('users', 'UserController');
