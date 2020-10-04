@@ -15,6 +15,8 @@
             <div class="form-group">
                 <label for="title">Título</label>
                 <input
+                    list="common-titles"
+                    autocomplete="off"
                     type="text"
                     name="title"
                     id="title"
@@ -22,6 +24,9 @@
                     class="@error('title') is-invalid @enderror form-control"
                     value="{{ isset($report) ? $report->title : '' }}"
                 >
+                <datalist id="common-titles">
+                    <option value="Computador sem internet">
+                </datalist>
             </div>
             <div class="form-group">
                 <label for="labs">Laboratórios</label>
