@@ -8,5 +8,6 @@
     "/js/datatables/labs.js": "/js/datatables/labs.js",
     "/js/datatables/problems.js": "/js/datatables/problems.js",
     "/js/datatables/reports.js": "/js/datatables/reports.js",
-    "/js/select2/reports.js": "/js/select2/reports.js"
+    "/js/select2/reports.js": "/js/select2/reports.js",
+    "/js/datatables/dashboard.js": "/js/datatables/dashboard.js"
 }

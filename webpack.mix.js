@@ -36,4 +36,7 @@ mix.js('resources/js/app.js', 'public/js')
     ], 'public/js/datatables/reports.js')
     .scripts([
         'resources/views/assets/js/select2/reports.js'
-    ], 'public/js/select2/reports.js');
+    ], 'public/js/select2/reports.js')
+    .scripts([
+        'resources/views/assets/js/datatables/dashboard.js'
+    ], 'public/js/datatables/dashboard.js');
