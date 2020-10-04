@@ -8,11 +8,9 @@
 @endsection
 
 @section('content_header')
-    @component('components.header', [
-        'title' => 'Listagem de laboratórios',
-        'route' => 'labs.create',
-        'backBtn' => false
-    ])@endcomponent
+    <h1>Dashboard</h1>
+    <hr>
+    <h5>Problemas pendentes</h5>
 @endsection
 
 @section('content')
@@ -32,7 +30,7 @@
                 </tr>
             </thead>
             <tbody>
-                {{-- @foreach ($problems as $problem)
+                @foreach ($problems as $problem)
                     <tr>
                         <td>{{ $problem->id }}</td>
                         <td>{{ Str::limit($problem->title, $limit = 20, $end = '...') }}</td>
@@ -56,7 +54,7 @@
                             </a>
                         </td>
                     </tr>
-                @endforeach --}}
+                @endforeach
             </tbody>
             <tfoot>
                 <tr>
