@@ -69,5 +69,5 @@
 @section('js')
     <script src="{{ url('js/datatables/index.js') }}"></script>
     <script src="{{ url('js/sweetalert/index.js') }}"></script>
-    {{-- <script src="{{ url('js/datatables/labs.js') }}"></script> --}}
+    <script src="{{ url('js/datatables/users.js') }}"></script>
 @endsection

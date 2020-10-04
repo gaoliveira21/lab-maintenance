@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -14,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data['users'] = User::where('active', 1)->get();
+        $data['users'] = User::where('active', 1)->where('id', '!=', Auth::id())->get();
         return view('pages.users.index', $data);
     }
 
