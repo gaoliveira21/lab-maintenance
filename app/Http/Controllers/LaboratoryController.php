@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Laboratory;
+use Illuminate\Support\Facades\Auth;
 
 class LaboratoryController extends Controller
 {
@@ -18,6 +19,7 @@ class LaboratoryController extends Controller
      */
     public function index()
     {
+        $this->authorize('viewAny', Laboratory::class);
         $data['laboratories'] = Laboratory::where('active', 1)->get();
         return view('pages.labs.index', $data);
     }
@@ -29,6 +31,7 @@ class LaboratoryController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Laboratory::class);
         return view('pages.labs.create');
     }
 
@@ -40,6 +43,7 @@ class LaboratoryController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Laboratory::class);
         $request->validate([
             'name' => 'required',
         ]);
@@ -70,6 +74,7 @@ class LaboratoryController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('update', Laboratory::class);
         $data['laboratory'] = Laboratory::find($id);
 
         if (empty($data['laboratory'])) {
@@ -88,6 +93,7 @@ class LaboratoryController extends Controller
      */
     public function update(Request $request, int $id)
     {
+        $this->authorize('update', Laboratory::class);
         $request->validate([
             'name' => 'required',
         ]);
@@ -118,6 +124,7 @@ class LaboratoryController extends Controller
      */
     public function destroy($id)
     {
+        $this->authorize('delete', Laboratory::class);
         $laboratory = Laboratory::find($id);
 
         if (empty($laboratory)) {
