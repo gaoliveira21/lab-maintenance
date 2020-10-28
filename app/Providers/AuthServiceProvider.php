@@ -5,10 +5,12 @@ namespace App\Providers;
 use App\Models\Laboratory;
 use App\Models\Problem;
 use App\Models\Report;
+use App\Models\User;
 
 use App\Policies\LaboratoryPolicy;
 use App\Policies\ProblemPolicy;
 use App\Policies\ReportPolicy;
+use App\Policies\UserPolicy;
 
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -26,6 +28,7 @@ class AuthServiceProvider extends ServiceProvider
         Laboratory::class => LaboratoryPolicy::class,
         Problem::class => ProblemPolicy::class,
         Report::class => ReportPolicy::class,
+        User::class => UserPolicy::class,
     ];
 
     /**

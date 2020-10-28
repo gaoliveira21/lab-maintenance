@@ -16,6 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
+        $this->authorize('viewAny', User::class);
         $data['users'] = User::where('active', 1)->where('id', '!=', Auth::id())->get();
         return view('pages.users.index', $data);
     }
@@ -27,6 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', User::class);
         return view('pages.users.create');
     }
 
@@ -38,6 +40,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', User::class);
         $request->validate([
             'name' => 'required|max:100',
             'email' => 'required|max:255',
@@ -66,17 +69,6 @@ class UserController extends Controller
         $user->save();
 
         return redirect()->route('users.index');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $user)
-    {
-        //
     }
 
     /**
@@ -152,6 +144,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+        $this->authorize('delete', User::class);
         $user->active = 0;
         $user->save();
 
