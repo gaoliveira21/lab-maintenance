@@ -255,7 +255,7 @@ return [
         ['header' => 'Configurações da conta'],
         [
             'text' => 'Editar perfil',
-            'url' => '#',
+            'route' => 'users.edit',
             'icon' => 'fas fa-user-alt mr-2'
         ],
         [
