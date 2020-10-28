@@ -104,6 +104,9 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->active = 0;
+        $user->save();
+
+        return response()->json([], 200);
     }
 }
