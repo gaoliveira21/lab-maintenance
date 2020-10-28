@@ -51,6 +51,12 @@ class UserController extends Controller
             return redirect()->route('users.create')->withErrors('O campo Função é obrigatório');
         }
 
+        $verifyIfUserExists = User::where('email', $request->email);
+
+        if(!empty($verifyIfUserExists)) {
+            return redirect()->route('users.create')->withErrors('E-mail ja cadastrado');
+        }
+
         $user = new User();
         $user->password = Hash::make($request->password);
         $user->email = $request->email;
