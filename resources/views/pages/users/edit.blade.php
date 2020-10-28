@@ -18,6 +18,7 @@
 @component('components.alert', [
     'error' => isset($error) ? $error : null,
 ])@endcomponent
+@component('components.success')@endcomponent
 <div class="card">
     <div class="card-body">
         <form
@@ -48,18 +49,9 @@
                     value="{{ $user->email }}"
                 >
             </div>
-            <div class="form-group">
-                <label for="role">Função</label>
-                <select
-                    selected="80"
-                    name="role"
-                    id="role"
-                    class="form-control"
-                >
-                    <option value="80" {{ $user->role === 80 ? 'selected' : '' }}>Moderador</option>
-                    <option value="60" {{ $user->role === 60 ? 'selected' : '' }}>Professor</option>
-                </select>
-            </div>
+            <hr>
+            <h5>Alterar senha</h5>
+
             <button type="submit" class="btn btn-danger">
                 ATUALIZAR PERFIL
             </button>

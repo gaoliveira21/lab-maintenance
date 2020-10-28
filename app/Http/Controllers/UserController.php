@@ -47,13 +47,13 @@ class UserController extends Controller
 
         $role = (int) $request->role;
 
-        if($role === 0) {
+        if ($role === 0) {
             return redirect()->route('users.create')->withErrors('O campo Função é obrigatório');
         }
 
         $verifyIfUserExists = User::where('email', $request->email);
 
-        if(!empty($verifyIfUserExists)) {
+        if (!empty($verifyIfUserExists)) {
             return redirect()->route('users.create')->withErrors('E-mail ja cadastrado');
         }
 
@@ -100,9 +100,20 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:100',
+            'email' => 'required|max:255',
+        ]);
+
+        $user = User::find(Auth::id());
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
+
+        return redirect()->route('users.edit')->with('success', 'Perfil atualizado com sucesso!');
     }
 
     /**
