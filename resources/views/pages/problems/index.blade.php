@@ -33,6 +33,7 @@
             </thead>
             <tbody>
                 @foreach ($problems as $problem)
+                    @can('view-problems', $problem)
                     <tr>
                         <td>{{ $problem->id }}</td>
                         <td>{{ Str::limit($problem->title, $limit = 20, $end = '...') }}</td>
@@ -56,6 +57,7 @@
                             </a>
                         </td>
                     </tr>
+                    @endcan
                 @endforeach
             </tbody>
             <tfoot>

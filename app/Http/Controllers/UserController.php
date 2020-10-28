@@ -53,7 +53,7 @@ class UserController extends Controller
 
         $verifyIfUserExists = User::where('email', $request->email);
 
-        if (!empty($verifyIfUserExists)) {
+        if (!$verifyIfUserExists->get()->isEmpty()) {
             return redirect()->route('users.create')->withErrors('E-mail ja cadastrado');
         }
 

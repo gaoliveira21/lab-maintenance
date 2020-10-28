@@ -235,7 +235,8 @@ return [
         [
             'text' => 'Laboratórios',
             'route' => 'labs.index',
-            'icon' => 'fas fa-flask mr-2'
+            'icon' => 'fas fa-flask mr-2',
+            'can' => 'manage-labs',
         ],
         [
             'text' => 'Problemas',
@@ -245,12 +246,14 @@ return [
         [
             'text' => 'Relatórios',
             'route' => 'reports.index',
-            'icon' => 'fas fa-file-signature mr-2'
+            'icon' => 'fas fa-file-signature mr-2',
+            'can' => 'manage-reports',
         ],
         [
             'text' => 'Gerenciar usuários',
             'route' => 'users.index',
-            'icon' => 'fas fa-users mr-2'
+            'icon' => 'fas fa-users mr-2',
+            'can' => 'manage-users',
         ],
         ['header' => 'Configurações da conta'],
         [

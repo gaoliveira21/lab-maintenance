@@ -31,6 +31,7 @@
             </thead>
             <tbody>
                 @foreach ($reports as $report)
+                    @can('view-reports', $report)
                     <tr>
                         <td>{{ $report->id }}</td>
                         <td>{{ $report->title }}</td>
@@ -46,6 +47,7 @@
                             </a>
                         </td>
                     </tr>
+                    @endcan
                 @endforeach
             </tbody>
             <tfoot>
