@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -26,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.users.create');
     }
 
     /**
@@ -37,7 +38,28 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:100',
+            'email' => 'required|max:255',
+            'role' => 'required',
+            'password' => 'required|between:6,20'
+        ]);
+
+        $role = (int) $request->role;
+
+        if($role === 0) {
+            return redirect()->route('users.create')->withErrors('O campo Função é obrigatório');
+        }
+
+        $user = new User();
+        $user->password = Hash::make($request->password);
+        $user->email = $request->email;
+        $user->name = $request->name;
+        $user->role = $request->role;
+        $user->active = 1;
+        $user->save();
+
+        return redirect()->route('users.index');
     }
 
     /**
