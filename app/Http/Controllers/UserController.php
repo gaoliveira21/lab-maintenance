@@ -107,7 +107,12 @@ class UserController extends Controller
             'email' => 'required|max:255',
         ]);
 
+        $checkUserEmail = User::where('email', $request->email)->first();
         $user = User::find(Auth::id());
+
+        if(!empty($checkUserEmail) && $checkUserEmail->id !== Auth::id()) {
+            return redirect()->route('users.edit')->withErrors('E-mail ja cadastrado');
+        }
 
         $user->name = $request->name;
         $user->email = $request->email;
