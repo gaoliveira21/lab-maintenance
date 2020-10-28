@@ -77,6 +77,7 @@ class ProblemController extends Controller
      */
     public function show(Problem $problem)
     {
+        $this->authorize('view', $problem);
         $data['problem'] = $problem;
         return view('pages.problems.show', $data);
     }
@@ -89,6 +90,7 @@ class ProblemController extends Controller
      */
     public function edit(Problem $problem)
     {
+        $this->authorize('update', $problem);
         $data['laboratories'] = Laboratory::all();
         $data['problem'] = $problem;
         return view('pages.problems.edit', $data);
@@ -103,6 +105,7 @@ class ProblemController extends Controller
      */
     public function update(Request $request, Problem $problem)
     {
+        $this->authorize('update', $problem);
         $request->validate([
             'title' => 'required|max:255',
             'body' => 'required|max:1024',

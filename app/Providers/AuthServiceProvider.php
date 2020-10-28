@@ -3,7 +3,11 @@
 namespace App\Providers;
 
 use App\Models\Laboratory;
+use App\Models\Problem;
 use App\Policies\LaboratoryPolicy;
+use App\Policies\ProblemPolicy;
+
+
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -17,6 +21,7 @@ class AuthServiceProvider extends ServiceProvider
     protected $policies = [
         // 'App\Model' => 'App\Policies\ModelPolicy',
         Laboratory::class => LaboratoryPolicy::class,
+        Problem::class => ProblemPolicy::class,
     ];
 
     /**
