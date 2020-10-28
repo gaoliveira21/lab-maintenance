@@ -32,3 +32,4 @@ Route::resource('users', 'UserController')->except(['edit', 'update']);
 
 Route::get('/user/edit', 'UserController@edit')->name('users.edit');
 Route::put('/user/update', 'UserController@update')->name('users.update');
+Route::put('/user/change-password', 'UserController@changePassword')->name('users.changePassword');

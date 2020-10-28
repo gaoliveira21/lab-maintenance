@@ -116,6 +116,29 @@ class UserController extends Controller
         return redirect()->route('users.edit')->with('success', 'Perfil atualizado com sucesso!');
     }
 
+    public function changePassword(Request $request)
+    {
+        $request->validate([
+            'oldPassword' => 'required',
+            'newPassword' => 'required|between:6,20',
+        ]);
+
+        if($request->newPassword !== $request->confirmNewPassword) {
+            return redirect()->route('users.edit')->withErrors('Os campos Nova senha e Confirmar nova senha precisam ser iguais');
+        }
+
+        $user = User::find(Auth::id());
+
+        if(!Hash::check($request->oldPassword, $user->password)) {
+            return redirect()->route('users.edit')->withErrors('Senha atual incorreta');
+        }
+
+        $user->password = Hash::make($request->newPassword);
+        $user->save();
+
+        return redirect()->route('users.edit')->with('success', 'Senha alterada com sucesso!');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

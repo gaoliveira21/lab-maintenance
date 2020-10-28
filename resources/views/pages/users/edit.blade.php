@@ -49,11 +49,58 @@
                     value="{{ $user->email }}"
                 >
             </div>
-            <hr>
-            <h5>Alterar senha</h5>
-
             <button type="submit" class="btn btn-danger">
                 ATUALIZAR PERFIL
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <h2>Alterar senha</h2>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <form
+            action="{{ route('users.changePassword') }}"
+            method="POST"
+        >
+            @csrf
+            @method('PUT')
+            <div class="form-group">
+                <label for="oldPassword">Senha atual</label>
+                <input
+                    type="password"
+                    name="oldPassword"
+                    id="oldPassword"
+                    required
+                    class="@error('oldPassword') is-invalid @enderror form-control"
+                >
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Nova senha</label>
+                <input
+                    type="password"
+                    name="newPassword"
+                    id="newPassword"
+                    required
+                    class="@error('newPassword') is-invalid @enderror form-control"
+                >
+            </div>
+            <div class="form-group">
+                <label for="confirmNewPassword">Confirmar nova senha</label>
+                <input
+                    type="password"
+                    name="confirmNewPassword"
+                    id="confirmNewPassword"
+                    required
+                    class="@error('confirmNewPassword') is-invalid @enderror form-control"
+                >
+            </div>
+            <button type="submit" class="btn btn-danger">
+                ATUALIZAR SENHA
             </button>
         </form>
     </div>
