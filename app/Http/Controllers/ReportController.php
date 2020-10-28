@@ -16,6 +16,7 @@ class ReportController extends Controller
      */
     public function index()
     {
+        $this->authorize('viewAny', Report::class);
         $data['reports'] = Report::where(['active' => 1])->get();
         return view('pages.reports.index', $data);
     }
@@ -27,6 +28,7 @@ class ReportController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Report::class);
         $data['laboratories'] = Laboratory::all();
         return view('pages.reports.create', $data);
     }
@@ -39,6 +41,7 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Report::class);
         $request->validate([
             'title' => 'required|max:255',
             'text' => 'required|max:1024',
@@ -69,6 +72,7 @@ class ReportController extends Controller
      */
     public function show(Report $report)
     {
+        $this->authorize('view', $report);
         $data['report'] = $report;
         return view('pages.reports.show', $data);
     }
@@ -81,6 +85,7 @@ class ReportController extends Controller
      */
     public function edit(Report $report)
     {
+        $this->authorize('update', $report);
         $data['laboratories'] = Laboratory::all();
         $data['report'] = $report;
         return view('pages.reports.edit', $data);
@@ -95,6 +100,7 @@ class ReportController extends Controller
      */
     public function update(Request $request, Report $report)
     {
+        $this->authorize('update', $report);
         $request->validate([
             'title' => 'required|max:255',
             'text' => 'required|max:1024',
