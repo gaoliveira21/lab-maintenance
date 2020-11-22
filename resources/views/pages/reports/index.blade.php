@@ -42,9 +42,11 @@
                             <a class="btn btn-xs btn-info mr-1" href="{{ route('reports.show', $report->id) }}">
                                 <i class="far fa-eye"></i>
                             </a>
+                            @can('edit-reports', $report)
                             <a class="btn btn-xs btn-primary mr-1" href="{{ route('reports.edit', $report->id) }}">
                                 <i class="fas fa-pen"></i>
                             </a>
+                            @endcan
                         </td>
                     </tr>
                     @endcan

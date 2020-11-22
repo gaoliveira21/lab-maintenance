@@ -49,9 +49,11 @@
                             <a class="btn btn-xs btn-info mr-1" href="{{ route('problems.show', $problem->id) }}">
                                 <i class="far fa-eye"></i>
                             </a>
+                            @can('edit-problems', $problem)
                             <a class="btn btn-xs btn-primary mr-1" href="{{ route('problems.edit', $problem->id) }}">
                                 <i class="fas fa-pen"></i>
                             </a>
+                            @endcan
                         </td>
                     </tr>
                 @endforeach

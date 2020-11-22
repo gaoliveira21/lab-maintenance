@@ -51,7 +51,7 @@ class ReportPolicy
      */
     public function update(User $user, Report $report)
     {
-        return $user->id === $report->id;
+        return $user->id === $report->user_id;
     }
 
     /**

@@ -52,6 +52,10 @@ class AuthServiceProvider extends ServiceProvider
             return $user->role >= 80;
         });
 
+        Gate::define('edit-reports', function ($user, $report) {
+            return $user->id === $report->user_id;
+        });
+
         Gate::define('view-reports', function ($user, $report) {
             if($user->role === 100) {
                 return true;
@@ -66,6 +70,14 @@ class AuthServiceProvider extends ServiceProvider
             }
 
             return $user->role <= 60 && $problem->user_id === $user->id;
+        });
+
+        Gate::define('edit-problems', function ($user, $problem) {
+            if($user->role >= 80) {
+                return true;
+            }
+
+            return $problem->user_id === $user->id;
         });
     }
 }

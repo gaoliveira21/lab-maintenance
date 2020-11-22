@@ -19,7 +19,7 @@ class ProblemPolicy
      */
     public function view(User $user, Problem $problem)
     {
-        if($user->role > 60) {
+        if($user->role >= 60) {
             return true;
         }
 
