@@ -23,6 +23,39 @@
                     value="<?= isset($laboratory) ? $laboratory->name : '' ?>"
                 >
             </div>
+            <div class="form-group">
+                <label for="name">Computadores</label>
+                <input
+                    type="number"
+                    name="computers"
+                    id="computers"
+                    required
+                    class="@error('computers') is-invalid @enderror form-control"
+                    value="<?= isset($laboratory) ? $laboratory->equipments->computers : '' ?>"
+                >
+            </div>
+            <div class="form-group">
+                <label for="name">Projetores</label>
+                <input
+                    type="number"
+                    name="projectors"
+                    id="projectors"
+                    required
+                    class="@error('projectors') is-invalid @enderror form-control"
+                    value="<?= isset($laboratory) ? $laboratory->equipments->projectors : '' ?>"
+                >
+            </div>
+            <div class="form-group">
+                <label for="name">Televisões</label>
+                <input
+                    type="number"
+                    name="televisions"
+                    id="televisions"
+                    required
+                    class="@error('televisions') is-invalid @enderror form-control"
+                    value="<?= isset($laboratory) ? $laboratory->equipments->televisions : '' ?>"
+                >
+            </div>
             <button type="submit" class="btn btn-danger">
                 ENVIAR
             </button>

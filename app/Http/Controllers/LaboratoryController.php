@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipments;
 use Illuminate\Http\Request;
 use App\Models\Laboratory;
-use Illuminate\Support\Facades\Auth;
 
 class LaboratoryController extends Controller
 {
@@ -46,11 +46,14 @@ class LaboratoryController extends Controller
         $this->authorize('create', Laboratory::class);
         $request->validate([
             'name' => 'required',
+            'computers' => 'required',
+            'projectors' => 'required',
+            'televisions' => 'required'
         ]);
 
         $name = $request->name;
         $laboratory = Laboratory::where([
-            'name'=> $name,
+            'name' => $name,
             'active' => 1
         ])->first();
 
@@ -58,9 +61,16 @@ class LaboratoryController extends Controller
             return redirect()->route('labs.create')->withErrors('Laboratório ja cadastrado.');
         }
 
-        Laboratory::create([
+        $newLaboratory = Laboratory::create([
             'name' => $name,
             'active' => 1
+        ]);
+
+        Equipments::create([
+            'computers' => $request->computers,
+            'projectors' => $request->projectors,
+            'televisions' => $request->televisions,
+            'laboratory_id' => $newLaboratory->id
         ]);
 
         return redirect()->route('labs.index');
@@ -100,18 +110,24 @@ class LaboratoryController extends Controller
 
         $name = $request->name;
         $laboratory = Laboratory::where([
-            'name'=> $name,
+            'name' => $name,
             'active' => 1
         ])->first();
 
-        if (!empty($laboratory)) {
+        if (!empty($laboratory) && $laboratory->name !== $request->name) {
             return redirect('labs/' . $id . '/edit')->withErrors('Laboratório ja cadastrado.');
         }
 
         $laboratory = Laboratory::find($id);
         $laboratory->name = $name;
 
+        $equipments = Equipments::where('laboratory_id', $laboratory->id)->first();
+        $equipments->computers = $request->computers;
+        $equipments->projectors = $request->projectors;
+        $equipments->televisions = $request->televisions;
+
         $laboratory->save();
+        $equipments->save();
 
         return redirect()->route('labs.index');
     }
