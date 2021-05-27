@@ -3,12 +3,12 @@
 </p>
 
 <p align="center">
-  🌱 Aplicação web desenvolvida para gerenciamento de laboratórios de informática da FATEC - JAHU
+  🧪 Aplicação web desenvolvida para gerenciamento de laboratórios de informática da FATEC - JAHU
 </p>
 
 <img src="./.github/login.png">
 
-## hammer_and_wrench Tecnologias
+## :hammer_and_wrench: Tecnologias
 
 - [Laravel](https://laravel.com/)
 - [Laravel Mix](https://laravel.com/docs/8.x/mix)
@@ -18,9 +18,9 @@
 - [MySQL](https://www.mysql.com/)
 
 
-## gear Como rodar a aplicação
+## :gear: Como rodar a aplicação
 
-**hammer_and_wrench Tecnologias necessárias**
+**:hammer_and_wrench: Tecnologias necessárias**
 
 - PHP - Preferencialmente a versão 7.4
 - NodeJS - Preferencialmente a versão 14.x.x
