@@ -48,7 +48,8 @@ $ composer install
 $ docker-compose up -d
 
 # Execute as migrations
-# Por padrão será adicionado um usuário ao banco de dados, não se esqueça de preencher as seguintes variáveis de ambiente para não ter problemas:
+# Por padrão será adicionado um usuário ao banco de dados, 
+# não se esqueça de preencher as seguintes variáveis de ambiente para não ter problemas:
 # ADMIN_NAME | ADMIN_EMAIL | ADMIN_PASSWORD
 $ php artisan migrate
 
