@@ -70,7 +70,8 @@ $ npm run dev
 <table>
   <tr>
     <td align="center"><a href="https://github.com/gaoliveira21"><img style="border-radius: 50%;" src="https://github.com/gaoliveira21.png" width="100px;" alt=""/><br /><sub><b>Gabriel Oliveira</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/vinibn"><img style="border-radius: 50%;" src="https://github.com/vinibn.png" width="100px;" alt=""/><br /><sub><b>Vinicius Bueno</b></sub></a><br /></td>
   </tr>
 </table>
 
-**Contato:** <a href="https://www.linkedin.com/in/gabriel-jos%C3%A9-de-oliveira-633962197/">Linkedin</a>
+**Contato:** <a href="https://www.linkedin.com/in/gabriel-jose/">Linkedin</a>
